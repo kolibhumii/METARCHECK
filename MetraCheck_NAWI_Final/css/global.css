@@ -1,0 +1,60 @@
+:root {
+  color-scheme: light;
+  --navy: #173c63;
+  --navy-deep: #102e4b;
+  --blue: #245b89;
+  --blue-soft: #eaf1f7;
+  --page: #f3f6f8;
+  --surface: #fff;
+  --ink: #1d2b37;
+  --muted: #657582;
+  --line: #d6dfe5;
+  --green: #246a4b;
+  --green-soft: #e9f4ed;
+  --amber: #805813;
+  --amber-soft: #fbf2dc;
+  --red: #a63e3e;
+  --red-soft: #faeaea;
+  --focus: #287db6;
+  --shadow: 0 2px 8px rgb(22 44 62 / 7%);
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  background: var(--page);
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { min-width: 320px; margin: 0; font-size: 14px; line-height: 1.5; }
+button, input, select, textarea { color: inherit; font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+a { color: var(--blue); text-underline-offset: 3px; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgb(40 125 182 / 28%); outline-offset: 2px; }
+.hidden { display: none !important; }
+.muted { color: var(--muted); }
+.eyebrow { margin: 0 0 8px; color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); font-size: 19px; font-weight: 700; text-decoration: none; }
+.wordmark-mark { display: inline-grid; width: 34px; height: 34px; place-items: center; border: 1px solid #bdccd8; color: var(--navy); font-size: 17px; }
+.button { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; gap: 8px; padding: 8px 14px; border: 1px solid transparent; border-radius: 3px; font-weight: 600; text-decoration: none; transition: background-color .14s ease, border-color .14s ease; }
+.button-primary { background: var(--navy); color: #fff; }
+.button-primary:hover { background: var(--navy-deep); }
+.button-secondary { border-color: var(--line); background: #fff; color: var(--navy); }
+.button-secondary:hover { background: var(--blue-soft); }
+.button-quiet { border-color: transparent; background: transparent; color: var(--blue); }
+.button-danger { border-color: #e8c5c5; background: var(--red-soft); color: var(--red); }
+.install-app-button[hidden] { display: none; }
+.text-button { padding: 0; border: 0; background: transparent; color: var(--blue); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.toast { position: fixed; z-index: 30; right: 20px; bottom: 20px; max-width: min(420px, calc(100vw - 40px)); padding: 12px 16px; border: 1px solid #b8c8d2; border-left: 4px solid var(--blue); background: #fff; box-shadow: var(--shadow); }
+.toast:empty { display: none; }
+.field-error { min-height: 18px; margin: 4px 0 8px; color: var(--red); font-size: 12px; }
+.status { display: inline-flex; min-height: 22px; align-items: center; padding: 2px 8px; border: 1px solid transparent; border-radius: 2px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.status-success { border-color: #c7e0d0; background: var(--green-soft); color: var(--green); }
+.status-warning { border-color: #ecdcae; background: var(--amber-soft); color: var(--amber); }
+.status-danger { border-color: #eccaca; background: var(--red-soft); color: var(--red); }
+.status-neutral { border-color: #d7e0e6; background: #edf1f4; color: #526473; }
+.surface { border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); }
+.toast:not(:empty) { animation: toast-in .16s ease-out; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

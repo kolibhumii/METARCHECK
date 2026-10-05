@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c63">
+  <title>MetraCheck | NAWI Assessment Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script type="module" src="js/auth.js"></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-intro" aria-labelledby="brand-title">
+      <a class="wordmark" href="index.html" aria-label="MetraCheck home"><span class="wordmark-mark">M</span><span>MetraCheck</span></a>
+      <div class="intro-copy">
+        <p class="eyebrow">LEGAL METROLOGY WORKSPACE</p>
+        <h1 id="brand-title">NAWI Assessment &amp; Verification Platform</h1>
+        <p class="intro-description">A shared digital workspace for instrument testing, product registration, review and report verification.</p>
+        <ul class="feature-list">
+          <li>Standardized instrument testing workflows</li>
+          <li>Traceable digital assessment records</li>
+          <li>Product and manufacturer registry</li>
+          <li>Report lookup by verification ID</li>
+          <li>Role-based workspaces</li>
+        </ul>
+      </div>
+      <p class="intro-footnote">Prototype interface. Applicable legal requirements must be confirmed by the responsible authority.</p>
+    </section>
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-form-wrap">
+        <p class="eyebrow">SECURE WORKSPACE</p>
+        <h2 id="login-title">Sign in</h2>
+        <p class="muted">Use your organization account to continue.</p>
+        <p class="prototype-note">Prototype sign-in is simulated. Credentials are not checked or sent to a server; use Demo access to choose a workspace.</p>
+        <form id="loginForm" novalidate>
+          <label for="email">Email or username</label>
+          <input id="email" name="email" type="text" autocomplete="username" required placeholder="name@organization.gov" aria-describedby="loginError">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+            <button class="password-toggle" type="button" data-action="toggle-password" aria-label="Show password" aria-pressed="false" title="Show password"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div class="login-options"><label class="check-label"><input id="rememberMe" type="checkbox" name="remember"> <span>Remember me</span></label><button class="text-button" type="button" data-action="forgot-password">Forgot password?</button></div>
+          <p id="loginError" class="field-error" role="alert" aria-live="polite"></p>
+          <button class="button button-primary sign-in-button" type="submit">Sign in</button>
+        </form>
+        <div class="demo-access">
+          <button class="text-button" type="button" data-action="toggle-demo">Demo access</button>
+          <form id="demoForm" class="demo-form hidden">
+            <label for="demoRole">Open a demo workspace</label>
+            <select id="demoRole" name="role">
+              <option value="laboratory">Laboratory / Testing Officer</option>
+              <option value="manufacturer">Manufacturer / Industry</option>
+              <option value="inspector">Inspector / Legal Metrology Officer</option>
+              <option value="reviewer">Reviewer</option>
+              <option value="admin">Administrator</option>
+            </select>
+            <button class="button button-secondary" type="submit">Continue to demo</button>
+          </form>
+        </div>
+        <button class="button button-secondary install-app-button" type="button" hidden>Install MetraCheck</button>
+        <p class="contact-note">New to MetraCheck? Contact your administrator.</p>
+        <footer class="login-footer"><a href="pages/terms.html">Terms &amp; Conditions</a><span aria-hidden="true">·</span><a href="pages/privacy.html">Privacy Policy</a><span aria-hidden="true">·</span><a href="pages/public/verify-report.html">Public report verification</a></footer>
+      </div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

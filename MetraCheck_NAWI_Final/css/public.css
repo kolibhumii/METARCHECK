@@ -1,0 +1,10 @@
+.public-header { display: flex; height: 62px; align-items: center; justify-content: space-between; padding: 0 max(20px, calc((100vw - 1180px) / 2)); border-bottom: 1px solid var(--line); background: #fff; }
+.public-header > a:last-child { font-size: 12px; }
+.public-main { min-height: calc(100vh - 112px); padding: 42px 16px; }
+.public-main .public-verify { margin: 0 auto; }
+.public-verify h1 { margin: 0; color: var(--navy-deep); font-size: 25px; font-weight: 600; }
+.public-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+.public-caveat { margin-top: 26px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.public-footer { padding: 14px 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; text-align: center; }
+.qr-video { width: min(100%, 480px); max-height: 320px; margin-top: 14px; background: #18232b; }
+@media (max-width: 520px) { .public-main { padding: 22px 12px; } .public-main .public-verify { padding: 20px 16px; } .public-verify h1 { font-size: 21px; } }
